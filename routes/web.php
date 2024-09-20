@@ -33,7 +33,14 @@ Route::get('/reserve', function (){
     return view('reserve/reserve');
 });
 
+Route::get('/add', function(){
+    return view('');
+});
 
+
+/* Route::get('', function () {
+    return view('');
+}); */
 
 
 Route::get('/room',
