@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id('room_id') ;
-            $table->integer('room_type_id'); //複合キー
+            $table->foreignId('room_type_id'); //複合キー
             $table->integer('room_number') ;
             $table->timestamps();
         });

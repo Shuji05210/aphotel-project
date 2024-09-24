@@ -13,8 +13,8 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Guest::create([
-            'name' => '田中 太郎',
-            'address' => '京都府木津市4-5-6',
+            'name' => '田中 三郎',
+            'address' => '大阪府大阪市',
             'tel'=> '0123456789',
         ]);
     }

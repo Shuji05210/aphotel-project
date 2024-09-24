@@ -29,9 +29,11 @@ Route::get('/guest', function () {
     return view('guest/guest');
 });
 
-Route::get('/reserve', function (){
-    return view('reserve/reserve');
-});
+
+//閲覧用 予約一覧
+Route::get('reserve', [ReserveController::class, 'index']);
+
+// Route::get('reserve/create', [ReserveController::class, 'create']);
 
 Route::get('/add', function(){
     return view('');

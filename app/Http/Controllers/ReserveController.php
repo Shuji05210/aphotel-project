@@ -10,7 +10,24 @@ class ReserveController extends Controller
     public function index()
     {
         $reserves = Reserve::all();
+        return view('reserve.index', compact('reserves'));
+    }
 
-        return view('reserve.index', ['reserves' => $reserves]);
+    public function store(Request $request){
+        $validated = $request->validate([
+            'reserve_id' => 'required|max:20',
+            'people' => 'required|max:20',
+        ]);
+
+        $post = Post::create([
+            '' => $request->,
+            '' => $request->,
+        ]);
+
+        $post = Post::create($validated);
+
+        $validated['user_id'] = auth()->id();
+
+        return back();
     }
 }
