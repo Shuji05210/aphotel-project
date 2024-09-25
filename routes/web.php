@@ -12,7 +12,7 @@ use App\Http\Controllers\ReservedetailController;
 use App\Http\Controllers\RoomController;
 
 use App\Http\Controllers\RoomtypeController;
-
+use App\Models\Reserve;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,19 +25,27 @@ use App\Http\Controllers\RoomtypeController;
 |
 */
 
+//Guest ユーザー
 Route::get('/guest', function () {
-    return view('guest/guest');
+    return view('guest/index');
 });
 
+//登録フォームのルート
+Route::get('guest/create', [GuestController::class, 'create']);
+Route::post('guest',[GuestController::class, 'store'])->name('guest.store');
 
-//閲覧用 予約一覧
+//閲覧用 ユーザ一覧
+Route::get('guest', [GuestController::class, 'index']);
+
+
+//予約 Reserve
+Route::get('reserve/create', [ReserveController::class, 'create']);
+Route::post('reserve', [ReserveController::class, 'store'])->name('reserve.store');
+
+//一覧ページ
 Route::get('reserve', [ReserveController::class, 'index']);
 
-// Route::get('reserve/create', [ReserveController::class, 'create']);
 
-Route::get('/add', function(){
-    return view('');
-});
 
 
 /* Route::get('', function () {
@@ -45,8 +53,7 @@ Route::get('/add', function(){
 }); */
 
 
-Route::get('/room',
-function () {
+Route::get('/room',function () {
     return view('room');
 });
 

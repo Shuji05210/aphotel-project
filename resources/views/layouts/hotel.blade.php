@@ -39,8 +39,8 @@
                 <li><a href="/reserve">予約一覧</a></li>
             </ul>
             <ul class="main-nav">
-                <li><a href="/guest/add">利用者一覧</a></li>
-                <li><a href="/reserve/add">予約一覧</a></li>
+                <li><a href="/guest/create">利用者登録</a></li>
+                <li><a href="/reserve/create">予約登録</a></li>
             </ul>
         </nav>
     </header>

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Guest extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'address',
+        'tel'
+    ];
+
+    public function posts(){
+        return $this->hasMany(Reserve::class);
+    }
 }
