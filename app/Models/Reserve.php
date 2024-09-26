@@ -10,13 +10,13 @@ class Reserve extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'reserve_id';
     
     protected $fillable = [
+        'user_id',
         'people',
         'checkin_date',
-        'checkout_date', 
-        'user_id',
+        'checkout_date',
     ];
 
     public function guest(){

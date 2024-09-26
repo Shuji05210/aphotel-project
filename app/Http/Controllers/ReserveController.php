@@ -32,10 +32,10 @@ class ReserveController extends Controller
             'checkout_date' => 'required|max:10',
         ]);
 
-        $post = Guest::create($validated);
-
         $validated['user_id'] = auth()->id();
 
-        return back();
+        $reserve = Reserve::create($validated);
+
+        return back()->with('message', '保存しました');
     }
 }

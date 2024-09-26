@@ -13,9 +13,9 @@ class ReserveSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Reserve::create([
-            'user_id' => '1',
+            'user_id' => '3',
             'people'  => '4',
-            'checkin_date'  => '20240924',
+            'checkin_date'  => '20240925',
             'checkout_date' => '20240926',
         ]);
     }

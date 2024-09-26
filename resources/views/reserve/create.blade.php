@@ -12,6 +12,7 @@
     <h2 class="">宿泊予約フォーム</h2>
 
 <div>
+    
     <form method="post" action ="{{ route ('reserve.store') }}">@csrf
         <div>
         <label for="name">宿泊人数</label>

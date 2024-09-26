@@ -9,13 +9,15 @@ class Guest extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'user_id';
+
     protected $fillable = [
         'name',
         'address',
         'tel'
     ];
 
-    public function posts(){
+    public function reserves(){
         return $this->hasMany(Reserve::class);
     }
 }

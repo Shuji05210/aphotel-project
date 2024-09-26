@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
 
 use App\Http\Controllers\GuestController;
 
@@ -12,7 +12,8 @@ use App\Http\Controllers\ReservedetailController;
 use App\Http\Controllers\RoomController;
 
 use App\Http\Controllers\RoomtypeController;
-use App\Models\Reserve;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +26,13 @@ use App\Models\Reserve;
 |
 */
 
+
+
 //Guest ユーザー
-Route::get('/guest', function () {
-    return view('guest/index');
-});
 
 //登録フォームのルート
 Route::get('guest/create', [GuestController::class, 'create']);
-Route::post('guest',[GuestController::class, 'store'])->name('guest.store');
+Route::post('guest', [GuestController::class, 'store'])->name('guest.store');
 
 //閲覧用 ユーザ一覧
 Route::get('guest', [GuestController::class, 'index']);
@@ -48,14 +48,10 @@ Route::get('reserve', [ReserveController::class, 'index']);
 
 
 
-/* Route::get('', function () {
-    return view('');
-}); */
-
-
-Route::get('/room',function () {
+Route::get('/room', function () {
     return view('room');
 });
+
 
 
 
@@ -64,3 +60,15 @@ Route::get('/room',function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

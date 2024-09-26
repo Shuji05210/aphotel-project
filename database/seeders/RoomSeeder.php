@@ -13,9 +13,9 @@ class RoomSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Room::create([
-            'room_id' => '2',
-            'room_type_id' => '3',
-            'room_number' => '304',
+            'room_id' => '1',
+            'room_type_id' => '2',
+            'room_number' => '202',
         ]);
     }
 }

@@ -11,9 +11,6 @@
         <tr>
             <th>{{$reserve->reserve_id}}</th>
             
-            {{-- 0925 --}}
-            {{-- <th>{{$reserve->guest->user_id}}</th>  --}}
-
             <td>{{$reserve->people}}</td>
             <td>{{$reserve->checkin_date}}</td>
             <td>{{$reserve->checkout_date}}</td>
