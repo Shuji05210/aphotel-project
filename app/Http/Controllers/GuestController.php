@@ -20,12 +20,6 @@ class GuestController extends Controller
     }
 
     public function store(Request $request){
-        $guest = Guest::create([
-            'name' => $request->name,
-            'address'=> $request->address,
-            'tel'=> $request->tel,
-        ]);
-
         $validated = $request->validate([
             'name' => 'required|max:20',
             'address' => 'required|max:40',

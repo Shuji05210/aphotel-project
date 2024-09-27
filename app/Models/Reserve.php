@@ -13,10 +13,10 @@ class Reserve extends Model
     protected $primaryKey = 'reserve_id';
     
     protected $fillable = [
-        'user_id',
         'people',
         'checkin_date',
         'checkout_date',
+        'user_id',
     ];
 
     public function guest(){

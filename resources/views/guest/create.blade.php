@@ -28,12 +28,14 @@
         <br>
         
         <label for="tel">電話番号</label>
-        <input type="tel" name="tel" id="tel" placeholder="電話番号" value= "{{old ('tel')}}">
+        <input type="tel" name="tel" id="tel" placeholder="電話番号" {{--value= "{{old ('tel')}}"--}}>
 
         <br>
         <br>
 
-        <input type="submit" value="登録" class="form-control-sm">
+        <x-primary-button>
+            送信する
+        </x-primary-button>
     </form>
 </div>
     

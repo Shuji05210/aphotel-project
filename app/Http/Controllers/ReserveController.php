@@ -20,12 +20,6 @@ class ReserveController extends Controller
     }
 
     public function store(Request $request){
-        $reserve = Reserve::create([
-            'people' => $request->people,
-            'checkin_date' => $request->checkin_date,
-            'checkout_date' => $request->checkout_date,
-        ]);
-
         $validated = $request->validate([
             'people' => 'required|max:20',
             'checkin_date' => 'required|max:10',

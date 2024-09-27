@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\GuestController;
 
 use App\Http\Controllers\ReserveController;
@@ -33,6 +34,7 @@ use App\Http\Controllers\RoomtypeController;
 //登録フォームのルート
 Route::get('guest/create', [GuestController::class, 'create']);
 Route::post('guest', [GuestController::class, 'store'])->name('guest.store');
+
 
 //閲覧用 ユーザ一覧
 Route::get('guest', [GuestController::class, 'index']);
