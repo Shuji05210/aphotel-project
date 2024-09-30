@@ -28,7 +28,7 @@
         <br>
         
         <label for="tel">電話番号</label>
-        <input type="tel" name="tel" id="tel" placeholder="電話番号" {{--value= "{{old ('tel')}}"--}}>
+        <input type="tel" name="tel" id="tel" placeholder="電話番号" value= "{{old ('tel')}}">
 
         <br>
         <br>
