@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->id('reserve_id');
+            $table->foreignId('user_id');
             $table->integer('people');
             $table->date('checkin_date');
             $table->date('checkout_date');

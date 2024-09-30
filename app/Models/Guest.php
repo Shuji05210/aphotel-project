@@ -14,7 +14,7 @@ class Guest extends Model
     protected $fillable = [
         'name',
         'address',
-        'tel'
+        'tel',
     ];
 
     public function reserves(){

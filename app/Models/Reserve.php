@@ -10,6 +10,7 @@ class Reserve extends Model
 {
     use HasFactory;
 
+    // 主キーにid以外の名前を付けているなら指定する
     protected $primaryKey = 'reserve_id';
     
     protected $fillable = [
@@ -20,6 +21,7 @@ class Reserve extends Model
     ];
 
     public function guest(){
-        return $this->belongsTo(Guest::class);
+        //belongsTo(主テーブルの指定、従テーブルの外部キー、対応する主テーブルの主キー)
+        return $this->belongsTo(Guest::class,'user_id','user_id');
     }
 }

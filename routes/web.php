@@ -44,7 +44,7 @@ Route::get('guest', [GuestController::class, 'index']);
 Route::get('reserve/create', [ReserveController::class, 'create']);
 Route::post('reserve', [ReserveController::class, 'store'])->name('reserve.store');
 
-//一覧ページ
+//予約一覧ページ
 Route::get('reserve', [ReserveController::class, 'index']);
 
 
