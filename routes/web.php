@@ -50,9 +50,20 @@ Route::get('reserve', [ReserveController::class, 'index']);
 
 
 
-Route::get('/room', function () {
-    return view('room');
-});
+//部屋 room
+Route::get('room/create', [RoomController::class, 'create']);
+Route::post('room', [RoomController::class, 'store'])->name('room.store');
+
+Route::get('room', [RoomController::class, 'index']);
+
+
+
+//roomtype
+Route::get('roomtype/create', [RoomtypeController::class, 'create']);
+Route::post('roomtype', [RoomtypeController::class, 'store'])->name('roomtype.store');
+
+Route::get('roomtype', [RoomtypeController::class, 'index']);
+
 
 
 

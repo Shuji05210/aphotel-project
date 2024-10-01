@@ -9,8 +9,23 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::all();
+        $guests = Room::all();
+        return view('room.index', compact('rooms'));
+    }
 
-        return view('room.index', ['rooms' => $rooms]);
+    //登録フォームページを表示
+    public function create()
+    {
+        return view('room.create');
+    }
+    
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'room_number' => 'required|max:4',
+        ]);
+
+        $room = Room::create($validated);
     }
 }

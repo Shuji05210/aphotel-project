@@ -1,0 +1,9 @@
+.main-nav{
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+
+.head1{
+    text-align: center;
+}

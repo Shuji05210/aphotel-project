@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('reservedetails', function (Blueprint $table) {
             $table->id('reserve_detail_id');
-            $table->integer('reserve_id');  //複合キー
-            $table->integer('room_id');     //複合キー
+            $table->foreignId('reserve_id');  //複合キー
+            $table->foreignId('room_id');     //複合キー
             $table->date('rest_date');
             $table->integer('room_price');
             $table->timestamps();
