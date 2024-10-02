@@ -9,7 +9,7 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $guests = Room::all();
+        $rooms = Room::all();
         return view('room.index', compact('rooms'));
     }
 
@@ -23,6 +23,7 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'roomtype_id' => 'required|max:8',
             'room_number' => 'required|max:4',
         ]);
 

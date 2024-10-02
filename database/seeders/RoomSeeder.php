@@ -14,7 +14,7 @@ class RoomSeeder extends Seeder
     {
         \App\Models\Room::create([
             'room_id' => '1',
-            'room_type_id' => '2',
+            'roomtype_id' => '2',
             'room_number' => '202',
         ]);
     }

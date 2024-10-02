@@ -49,6 +49,14 @@ Route::get('reserve', [ReserveController::class, 'index']);
 
 
 
+//予約詳細
+Route::get('reservedetail/create', [ReservedetailController::class, 'create']);
+Route::post('reservedetail', [ReservedetailController::class, 'store'])->name('reservedetail.store');
+
+//予約詳細一覧ページ
+Route::get('reservedetail', [ReservedetailController::class, 'index']);
+
+
 
 //部屋 room
 Route::get('room/create', [RoomController::class, 'create']);

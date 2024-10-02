@@ -24,10 +24,5 @@ class Reserve extends Model
         //belongsTo(主テーブルの指定, 従テーブルの外部キー, 対応する主テーブルの主キー)
         return $this->belongsTo(Guest::class,'user_id','user_id');
     }
-    
-    //多対多のリレーション
-    // public function room(){
-    //     return $this->belongsToMany(Room::class, 'reservedetails', 'reserve_detail_id', 'room_id');
-    // }
 
 }

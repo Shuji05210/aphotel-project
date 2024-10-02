@@ -9,7 +9,7 @@ class RoomtypeController extends Controller
 {
     public function index()
     {
-        $guests = Roomtype::all();
+        $roomtypes = Roomtype::all();
         return view('roomtype.index', compact('roomtypes'));
     }
 
