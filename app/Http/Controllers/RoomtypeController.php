@@ -22,8 +22,8 @@ class RoomtypeController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'room_name'=> 'required|max:4',
-            'max_rest_people'=> 'required|max:3',
+            'room_name'=> 'required|max:20',
+            'max_rest_people'=> ['required', 'numeric', 'max:20'],
         ]);
 
         $roomtype = Roomtype::create($validated);

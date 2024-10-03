@@ -8,9 +8,8 @@
         <tr>
 
             <!-- roomメソッドのbelongToManyでroomモデルとその中間テーブルreserve_roomテーブルにアクセス  -->
-            <td>{{$reservedetail->room}}</td>
+            
 
-            <td>{{$reservedetail->room->first()}}</td>
         </tr>
         @endforeach
     </table>

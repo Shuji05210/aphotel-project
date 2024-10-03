@@ -19,12 +19,11 @@ class RoomController extends Controller
         return view('room.create');
     }
     
-
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'roomtype_id' => 'required|max:8',
-            'room_number' => 'required|max:4',
+            'roomtype_id' => ['required','numeric','max:4'],
+            'room_number' => ['required','digits:3','integer'],
         ]);
 
         $room = Room::create($validated);

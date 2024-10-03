@@ -14,7 +14,7 @@
 
             <ul class="main-nav">
                 <li><a href="/room/create">部屋登録</a></li>
-                <li><a href="/roomtype/create">部屋種別</a></li>
+                <li><a href="/roomtype/create">部屋種別登録</a></li>
             </ul>
         </nav>
         <div class="mt-8"></div>
@@ -28,13 +28,17 @@
         <form method = "post" action="{{ route ('room.store') }}"> @csrf
             <div class="mt-8">
                 <div class="w-full flex flex-col">
-                    <label for="name" class="font-semibold mt-4">部屋種別ID</label>
-                    <input type="text" name="roomtype_id" class="w-auto py-2 border border-gray-300 rounded-md" id="roomtype_id">
+                    <label for="roomtype_id" class="font-semibold mt-4">部屋種別ID</label>
+                    <x-input-error :messages="$errors->get('roomtype_id')" class="mt-2"/>
+                    <input type="text" name="roomtype_id" class="w-auto py-2 border border-gray-300 rounded-md"
+                    id="roomtype_id" placeholder="4以下の数値を入力" value="{{old('roomtype_id')}}">
                 </div>
 
                 <div class="w-full flex flex-col">
-                    <label for="price" class="font-semibold mt-4">部屋番号</label>
-                    <input type="text" name="room_number" class="w-auto py-2 border border-gray-300 rounded-md" id="room_number">
+                    <label for="room_number" class="font-semibold mt-4">部屋番号</label>
+                    <x-input-error :messages="$errors->get('room_number')" class="mt-2"/>
+                    <input type="text" name="room_number" class="w-auto py-2 border border-gray-300 rounded-md" 
+                    id="room_number" placeholder="3桁の数値"  value="{{old('room_number')}}">
                 </div>
             </div>
 
