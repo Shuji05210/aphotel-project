@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Room extends Model
 {
@@ -25,9 +23,10 @@ class Room extends Model
     }
 
     //リレーション 予約明細
-    public function reservedetail()
+    public function reserve()
     {
-        return $this->belongsToMany(Reservedetail::class);
+        //相手のモデル 中間テーブル名, 中間の相手の外部キー, 中間の自分の外部キー
+        return $this->belongsToMany(Reserve::class, 'reservedetails', 'room_id', 'reserve_id');
     }
 
 

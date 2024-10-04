@@ -15,7 +15,7 @@
     <form method="post" action ="{{ route ('reserve.store') }}">@csrf
         <div class="text-left flex">
         <label for="name">宿泊人数</label>
-        <input type="text" name="people" id="people" placeholder="人数を入力" value= "{{old ('name')}}">
+        <input type="text" name="people" id="people" placeholder="人数を入力" value= "{{old ('people')}}">
         </div>
 
         <br>

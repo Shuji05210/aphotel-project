@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <nav class="grid gap-4 grid-cols-2">
+        <nav class="flex justify-center items-center gap-4">
             <ul class="main-nav">
                 <li><a href="/guest">利用者一覧</a></li>
                 <li><a href="/reserve">予約一覧</a></li>
@@ -39,9 +39,9 @@
 
             <div class="w-full flex flex-col">
                     <label for="room_number" class="font-semibold mt-4">部屋ID</label>
-                    <x-input-error :messages="$errors->get('room_number')" class="mt-2"/>
-                    <input type="text" name="room_number" class="w-auto py-2 border border-gray-300 rounded-md" 
-                    id="room_number" placeholder="3桁の数値"  value="{{old('room_number')}}">
+                    <x-input-error :messages="$errors->get('room_id')" class="mt-2"/>
+                    <input type="text" name="room_id" class="w-auto py-2 border border-gray-300 rounded-md" 
+                    id="room_id" placeholder="1桁の数値"  value="{{old('room_id')}}">
                 </div>
             
 

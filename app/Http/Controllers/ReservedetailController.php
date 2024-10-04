@@ -22,12 +22,11 @@ class ReservedetailController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'reserve_id' => 'required|numeric', 
+            'room_id' => 'required|numeric',
             'rest_date' => 'required|max:8',
             'room_price' => 'required|max:10',
         ]);
-
-        $validated['reserve_id'] ;
-        $validated['room_id'];
 
         $reservedetail = Reservedetail::create($validated);
 

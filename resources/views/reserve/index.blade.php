@@ -27,9 +27,13 @@
             <td>{{$reserve->people}}人</td>
             <td>{{$reserve->checkin_date}}</td>
             <td>{{$reserve->checkout_date}}</td>
-        </tr>
+            
         @endforeach
+        </tr>
         </tbody>
     </table>
-@endsection
+    <br>
 
+   
+
+@endsection
