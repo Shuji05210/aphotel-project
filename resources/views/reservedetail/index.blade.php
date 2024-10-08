@@ -55,10 +55,10 @@
             <td>{{$reservedetail->reserve_id}}</td>
             <td>{{$reservedetail->room_id}}</td>
             <td>{{$reservedetail->rest_date}}</td>
-            <td>{{$reservedetail->room_price}}円</td>
+            <td>{{$reservedetail->room_price}} 円</td>
         @endforeach
         </tr>
         </tbody>
     </table>
 
-    <x-app-layout>
+</x-app-layout>
