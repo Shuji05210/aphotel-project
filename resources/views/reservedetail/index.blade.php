@@ -36,29 +36,30 @@
     </x-slot>
 
     
-    <<div class="p-4 flex justify-center items-center h-screen text-xl">
+    <div class="p-4 flex justify-center items-center h-screen text-xl">
     <table class="min-w-full border border-black">
         <thead class="bg-white">
             <tr>
-                <th>予約詳細ID</th>
-                <th>予約ID</th>
-                <th>部屋ID</th>
-                <th>宿泊日</th>
-                <th>宿泊料金</th>
+                <th class="px-4 py-2">予約詳細ID</th>
+                <th class="px-4 py-2">予約ID</th>
+                <th class="px-4 py-2">部屋ID</th>
+                <th class="px-4 py-2">宿泊日</th>
+                <th class="px-4 py-2">宿泊料金</th>
             </tr>
         </thead>
 
         <tbody>
         @foreach($reservedetails as $reservedetail)
-        <tr>
-            <th>{{$reservedetail->reserve_detail_id}}</th>
-            <td>{{$reservedetail->reserve_id}}</td>
-            <td>{{$reservedetail->room_id}}</td>
-            <td>{{$reservedetail->rest_date}}</td>
-            <td>{{$reservedetail->room_price}} 円</td>
+        <tr class="text-center">
+            <th class="px-4 py-2">{{$reservedetail->reserve_detail_id}}</th>
+            <td class="px-4 py-2">{{$reservedetail->reserve_id}}</td>
+            <td class="px-4 py-2">{{$reservedetail->room_id}}</td>
+            <td class="px-4 py-2">{{$reservedetail->rest_date}}</td>
+            <td class="px-4 py-2">{{$reservedetail->room_price}} 円</td>
         @endforeach
         </tr>
         </tbody>
     </table>
+    </div>
 
 </x-app-layout>

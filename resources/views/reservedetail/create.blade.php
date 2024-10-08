@@ -36,25 +36,26 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto px-6">
+        <div class="mt-4"></div>
         <form method = "post" action="{{ route ('reservedetail.store') }}"> @csrf
-            <div class="mt-8">
-                <div class="w-full flex flex-col">
-                    <label for="reserve_id" class="font-semibold mt-4">予約ID</label>
+            
+            <div class="w-full flex flex-col">
+                    <label for="reserve_id" class="font-semibold mt-4">予約ID : Reserve ID</label>
                     <x-input-error :messages="$errors->get('reserve_id')" class="mt-2"/>
                     <input type="text" name="reserve_id" class="w-auto py-2 border border-gray-300 rounded-md"
                     id="reserve_id" placeholder="予約IDを入力" value="{{old('reserve_id')}}">
                 </div>
 
             <div class="w-full flex flex-col">
-                    <label for="room_number" class="font-semibold mt-4">部屋ID</label>
+                    <label for="room_id" class="font-semibold mt-4">部屋ID : Room ID</label>
                     <x-input-error :messages="$errors->get('room_id')" class="mt-2"/>
                     <input type="text" name="room_id" class="w-auto py-2 border border-gray-300 rounded-md" 
-                    id="room_id" placeholder="1桁の数値"  value="{{old('room_id')}}">
+                    id="room_id" placeholder="RoomID を入力"  value="{{old('room_id')}}">
                 </div>
             
 
             <div class="w-full flex flex-col">
-                    <label for="rest_date" class="font-semibold mt-4">宿泊日</label>
+                    <label for="rest_date" class="font-semibold mt-4">宿泊日 : Date of Stay</label>
                     <x-input-error :messages="$errors->get('rest_date')" class="mt-2"/>
                     <input type="text" name="rest_date" class="w-auto py-2 border border-gray-300 rounded-md" 
                     id="rest_date" placeholder="日付を入力"  value="{{old('rest_date')}}">
@@ -62,16 +63,15 @@
             
 
             <div class="w-full flex flex-col">
-                    <label for="room_price" class="font-semibold mt-4">宿泊料金</label>
+                    <label for="room_price" class="font-semibold mt-4">宿泊料金 : Price</label>
                     <x-input-error :messages="$errors->get('room_price')" class="mt-2"/>
                     <input type="text" name="room_price" class="w-auto py-2 border border-gray-300 rounded-md" 
-                    id="room_price" placeholder="数値"  value="{{old('room_price')}}">
+                    id="room_price" placeholder="金額を入力"  value="{{old('room_price')}}">
                 </div>
-            </div>
-
+            
             <x-primary-button class="mt-4">
                 送信する
             </x-primary-button>
         </form>
     </div>
-</x-guest-layout>
+</x-app-layout>

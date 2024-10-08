@@ -35,9 +35,10 @@
         <p class="text-center font-medium text-l">Roomtype form</p>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto p-6 flex justify-center text-l m-auto">
+        <div class="mt-4"></div>
+        
         <form method = "post" action="{{ route ('roomtype.store') }}"> @csrf
-            <div class="mt-8">
                 <div class="w-full flex flex-col">
                     <label for="room_name" class="font-semibold mt-4">部屋の名前</label>
                     <x-input-error :messages="$errors->get('room_name')" class="mt-2"/>
@@ -51,11 +52,9 @@
                     <input type="text" name="max_rest_people" class="w-auto py-2 border border-gray-300 rounded-md"
                     id="max_rest_people" placeholder="宿泊可能人数を数値入力" value="{{old('room_name')}}">
                 </div>
-            </div>
-
-            <x-primary-button class="mt-4">
-                送信する
-            </x-primary-button>
+            
+            <input type="submit" value="送信する" class="w-auto px-4 py-2 border border-gray-300 rounded-md mt-4">
+            
         </form>
-    </div>
+        </div>
 </x-app-layout>

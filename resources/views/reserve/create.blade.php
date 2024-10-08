@@ -36,33 +36,30 @@
     </x-slot>
 
     
-    <div class="max-w-7xl mx-auto p-6 justify-center text-l m-auto">
-    <form method="post" action ="{{ route ('reserve.store') }}">@csrf
-        <div class="mt-8">
+    <div class="max-w-7xl mx-auto p-6 flex justify-center text-l m-auto">
+        <div class="mt-4"></div>
         
-        <div class="w-full flex flex-col">
-        <label for="name" class="font-semibold mt-4">宿泊人数</label>
-        <input type="text" name="people" id="people" placeholder="人数を入力" 
-        class="w-auto py-2 border border-gray-300 rounded-md"  value= "{{old ('people')}}">
-        </div>
+        <form method="post" action ="{{ route ('reserve.store') }}">@csrf
+            <div class="w-full flex flex-col">
+                <label for="people" class="font-semibold mt-4">宿泊人数 : Number of guests</label>
+                <x-input-error :messages="$errors->get('people')" class="mt-2"/>
+                <input type="text" name="people" id="people" placeholder="人数を入力"
+                class="w-auto py-2 border border-gray-300 rounded-md"  value= "{{old ('people')}}">
+            </div>
 
-        <br>
-
         <div class="w-full flex flex-col">
-            <label for="checkin_date" class="font-semibold mt-4">チェックイン日時</label>
+            <label for="checkin_date" class="font-semibold mt-4">チェックイン日時 : Check in Date</label>
+            <x-input-error :messages="$errors->get('checkin_date')" class="mt-2"/>
             <input type="text" name="checkin_date" id="checkin_date" placeholder="日時を入力 例:20240901"
             class="w-auto py-2 border border-gray-300 rounded-md"  value= "{{old ('checkin_date')}}">
         </div>
-        
-        <br>
-        
+                
         <div class="w-full flex flex-col">
-        <label for="checkout_date" class="font-semibold mt-4">チェックアウト日時</label>
-        <input type="text" name="checkout_date" id="checkout_date" placeholder="日時を入力 例:20240901"
+            <label for="checkout_date" class="font-semibold mt-4">チェックアウト日時 : Check out Date</label>
+            <x-input-error :messages="$errors->get('checkout_date')" class="mt-2"/>
+            <input type="text" name="checkout_date" id="checkout_date" placeholder="日時を入力 例:20240901"
         class="w-auto py-2 border border-gray-300 rounded-md"  value= "{{old ('checkout_date')}}">
         </div>
-
-        <br>
 
         <input type="submit" value="送信する" class="w-auto px-4 py-2 border border-gray-300 rounded-md mt-4">
     </form>

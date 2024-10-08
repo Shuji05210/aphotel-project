@@ -25,8 +25,8 @@ class Room extends Model
     //リレーション 予約明細
     public function reserve()
     {
-        //相手のモデル 中間テーブル名, 中間の相手の外部キー, 中間の自分の外部キー
-        return $this->belongsToMany(Reserve::class, 'reservedetails', 'room_id', 'reserve_id');
+        //相手のモデル 中間テーブル名, 中間の自分の外部キー, 相手の外部キー
+        return $this->belongsToMany(Reserve::class, 'reservedetails', 'reserve_id', 'room_id');
     }
 
 

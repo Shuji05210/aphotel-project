@@ -26,7 +26,7 @@ class Reserve extends Model
     }
 
     //多対多のリレーション
-    // belongsToMany(相手のモデル,中間テーブルの名前,中間テーブル上の相手のモデルの外部キー,中間テーブル上の自分のモデルの外部キー)
+    // belongsToMany(相手のモデル,中間テーブルの名前, '自分の外部キー', '相手の外部キー')
     public function room()
     {
         return $this->belongsToMany(Room::class, 'reservedetails', 'reserve_id', 'room_id');

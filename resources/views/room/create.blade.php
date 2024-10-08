@@ -37,9 +37,10 @@
 
     <div class="max-w-7xl mx-auto px-6 flex justify-center items-center">
         <form method = "post" action="{{ route ('room.store') }}"> @csrf
-            <div class="mt-8">
+            <div class="mt-4 py-4">
+
                 <div class="w-full flex flex-col">
-                    <label for="roomtype_id" class="font-semibold mt-4">部屋種別ID</label>
+                    <label for="roomtype_id" class="font-semibold mt-4">部屋種別ID : RoomType ID</label>
                     <x-input-error :messages="$errors->get('roomtype_id')" class="mt-2"/>                    
                     <select name="roomtype_id" id="roomtype_id" class="text-left w-auto py-2 border border-gray-300 rounded-md">
                           <option value="">------- 部屋の種類 選択してください -------</option>
@@ -50,16 +51,15 @@
                     </select>
                 </div>
 
-                <div class="w-full flex flex-col">
-                    <label for="room_number" class="font-semibold mt-4">部屋番号</label>
+                <div class="w-full flex flex-col py-4">
+                    <label for="room_number" class="font-semibold mt-4">部屋番号 : Room Number</label>
                     <x-input-error :messages="$errors->get('room_number')" class="mt-2"/>
                     <input type="text" name="room_number" class="w-auto py-2 border border-gray-300 rounded-md" 
                     id="room_number" placeholder="3桁の数値"  value="{{old('room_number')}}">
                 </div>
-            </div>
-            
+                        
             <input type="submit" value="送信する" class="w-auto px-4 py-2 border border-gray-300 rounded-md mt-4">
-        
+            </div>
         </form>
     </div>
 </x-app-layout>
