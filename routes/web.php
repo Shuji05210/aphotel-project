@@ -57,7 +57,6 @@ Route::post('reservedetail', [ReservedetailController::class, 'store'])->name('r
 Route::get('reservedetail', [ReservedetailController::class, 'index']);
 
 
-
 //部屋 room
 Route::get('room/create', [RoomController::class, 'create']);
 Route::post('room', [RoomController::class, 'store'])->name('room.store');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reservedetail;
 
+use App\Models\Room;
+use App\Models\Reserve;
+
 class ReservedetailController extends Controller
 {
     public function index()
@@ -13,6 +16,9 @@ class ReservedetailController extends Controller
 
         return view('reservedetail.index', compact('reservedetails'));
     }
+
+    
+
 
     public function create()
     {
