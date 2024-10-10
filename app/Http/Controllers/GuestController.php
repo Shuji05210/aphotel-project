@@ -27,7 +27,11 @@ class GuestController extends Controller
         ]);
 
         $guest = Guest::create($validated);
-        return back();
+
+        //メッセージ表示 indexへリダイレクト
+        session()->flash('success', 'データが正常に保存されました！');
+
+        return redirect('/guest');
     }
 
 }

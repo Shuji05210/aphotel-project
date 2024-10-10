@@ -69,7 +69,26 @@
     <br>
     </div>
 
-    <!-- 多対多 -->
+    <!-- 多対多リレーション -->
+    <br>
+    <p class="text-center">↓ 多対多リレーション</p>
+    <div class="p-4 flex justify-center items-center h-screen">
+    <table class="w-5 border border-black-500">
+        <thead class="bg-white">
+            <tr>
+                <th class="px-4 py-2 border-black">予約から見た部屋</th>
+            </tr>
+        </thead>
+
+        <tbody class="text-center">
+        @foreach($reserves as $reserve)
+        <tr>
+            <td class="px-4 py-2">{{$reserve->rooms}}</td>
+        @endforeach
+        </tr>
+        </tbody>
+    </table>
+    </div>
 
 
     </x-app-layout>

@@ -27,5 +27,10 @@ class RoomController extends Controller
         ]);
 
         $room = Room::create($validated);
+
+        //メッセージ表示 room一覧ページへリダイレクト
+        session()->flash('success', 'データが正常に保存されました！');
+
+        return redirect('/room');
     }
 }

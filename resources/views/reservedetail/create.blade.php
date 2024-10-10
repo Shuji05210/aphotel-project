@@ -35,7 +35,7 @@
         <p class="text-center font-medium text-l">Reserve detail form</p>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6 p-4 flex justify-center items-center h-screen text-l">
         <div class="mt-4"></div>
         <form method = "post" action="{{ route ('reservedetail.store') }}"> @csrf
             

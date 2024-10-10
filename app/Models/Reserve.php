@@ -27,9 +27,10 @@ class Reserve extends Model
 
     //多対多のリレーション
     // belongsToMany(相手のモデル,中間テーブルの名前, '自分の外部キー', '相手の外部キー')
-    public function room()
+    public function rooms()
     {
-        return $this->belongsToMany(Room::class, 'reservedetails', 'reserve_id', 'room_id');
+        return $this->belongsToMany(Room::class, 'reservedetails', 'reserve_id', 'room_id')
+        ->withPivot('rest_date', 'room_price');
     }
 
 }

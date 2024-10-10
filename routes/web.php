@@ -14,6 +14,8 @@ use App\Http\Controllers\RoomController;
 
 use App\Http\Controllers\RoomtypeController;
 
+use App\Http\Controllers\PageController;
+
 
 
 /*
@@ -72,7 +74,8 @@ Route::post('roomtype', [RoomtypeController::class, 'store'])->name('roomtype.st
 Route::get('roomtype', [RoomtypeController::class, 'index']);
 
 
-
+//page 一覧
+Route::get('service', [PageController::class, 'index']);
 
 
 

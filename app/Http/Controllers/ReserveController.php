@@ -29,6 +29,9 @@ class ReserveController extends Controller
 
         $reserve = Reserve::create($validated);
 
-        return back()->with('message', '保存しました');
+        //メッセージ表示 indexへリダイレクト
+        session()->flash('success', 'データが正常に保存されました！');
+
+        return redirect('/reserve');
     }
 }

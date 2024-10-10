@@ -35,9 +35,9 @@
         <p class="text-center font-medium text-l">Roomtype index</p>
     </x-slot>
 
-    <div class="p-4 flex justify-center items-center h-screen text-xl">
-    <table class="min-w-full border border-black">
-        <thead class="bg-white">
+    <div class="p-4 flex justify-center text-xl">
+    <table class="border border-black">
+        <thead class="bg-blue-400">
             <tr>
                 <th class="px-4 py-2">部屋種別ID</th>
                 <th class="px-4 py-2">部屋名</th>

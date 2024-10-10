@@ -36,7 +36,11 @@ class ReservedetailController extends Controller
 
         $reservedetail = Reservedetail::create($validated);
 
-        return back()->with('message', '保存しました');
+        //reservedetail 一覧ページへリダイレクト
+        session()->flash('success', 'データが正常に保存されました！');
+
+        return redirect('/reservedetail');
+
     }
 
 }

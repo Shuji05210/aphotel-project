@@ -43,18 +43,18 @@
                     <label for="roomtype_id" class="font-semibold mt-4">部屋種別ID : RoomType ID</label>
                     <x-input-error :messages="$errors->get('roomtype_id')" class="mt-2"/>                    
                     <select name="roomtype_id" id="roomtype_id" class="text-left w-auto py-2 border border-gray-300 rounded-md">
-                          <option value="">------- 部屋の種類 選択してください -------</option>
-                          <option value="1">松</option>
-                          <option value="2">竹</option>
-                          <option value="3">梅</option>
-                          <option value="4">大広間</option>
+                          <option value="" class="bg-gray-300">------- 部屋の種類 選択してください -------</option>
+                          <option value="1">1:   松</option>
+                          <option value="2">2:   竹</option>
+                          <option value="3">3:   梅</option>
+                          <option value="4">4:   大広間</option>
                     </select>
                 </div>
 
                 <div class="w-full flex flex-col py-4">
                     <label for="room_number" class="font-semibold mt-4">部屋番号 : Room Number</label>
                     <x-input-error :messages="$errors->get('room_number')" class="mt-2"/>
-                    <input type="text" name="room_number" class="w-auto py-2 border border-gray-300 rounded-md" 
+                    <input type="text" name="room_number" class="w-auto py-2 border border-gray-300 rounded-md placeholder-indigo-400" 
                     id="room_number" placeholder="3桁の数値"  value="{{old('room_number')}}">
                 </div>
                         

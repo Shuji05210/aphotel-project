@@ -27,5 +27,10 @@ class RoomtypeController extends Controller
         ]);
 
         $roomtype = Roomtype::create($validated);
+
+        //メッセージ表示 indexへリダイレクト
+        session()->flash('success', 'データが正常に保存されました！');
+
+        return redirect('/roomtype');
     }
 }
